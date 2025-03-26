@@ -1,8 +1,6 @@
 import './style/reset.css';
 import './style/main.css';
 
-import { Game } from './script/game.js';
+const container = document.querySelector('#container');
 
-const game = new Game();
-game.initializeGame();
-game.updateUI();
+container.innerHTML = `<h1>Home Page</h1>`;
