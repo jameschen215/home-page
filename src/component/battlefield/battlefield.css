@@ -1,0 +1,23 @@
+.battlefields {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	transition: opacity 200ms ease;
+}
+
+.battlefields.disabled {
+	pointer-events: none;
+	opacity: 0.8;
+}
+
+.battlefield {
+	display: flex;
+}
+
+.ships-for-stats {
+	margin-top: 40px;
+}
+
+.board-container.bot {
+	margin-right: 30px;
+}

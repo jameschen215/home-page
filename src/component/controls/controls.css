@@ -1,0 +1,31 @@
+.controls {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 80px;
+}
+
+.btn {
+	border: none;
+	outline: none;
+	padding: 6px 0;
+	width: 120px;
+
+	background-color: transparent;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+	font-size: 1.4rem;
+	font-weight: 600;
+
+	transition: color 200ms ease, border-color 200ms ease;
+}
+
+.btn:hover {
+	color: var(--primary);
+	border-color: var(--primary);
+}
+
+.btn.disabled {
+	pointer-events: none;
+}

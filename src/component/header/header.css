@@ -1,0 +1,152 @@
+.header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	margin-bottom: auto;
+}
+
+.brand {
+	flex: 0 0 200px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+
+	font-family: 'Anton', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 2rem;
+	color: var(--primary);
+}
+
+.game-info {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-info.win {
+	color: var(--primary);
+	font-weight: 900;
+}
+
+.game-info.lose {
+	color: var(--red);
+	font-weight: 900;
+}
+
+.game-info .message {
+	width: 50%;
+	text-align: center;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	padding: 6px;
+}
+
+/* ------ Style Dropdown ------ */
+
+.dropdown-container {
+	flex: 0 0 200px;
+	position: relative;
+	height: 100%;
+
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.difficulty-icon {
+	width: 24px;
+	height: 24px;
+	margin-top: 2px;
+}
+
+.difficulty-icon img {
+	width: 100%;
+}
+
+.dropdown-trigger {
+	width: 72px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	height: 100%;
+	outline: none;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+
+	transition: color 200ms ease-in;
+}
+
+.dropdown-trigger.disabled {
+	pointer-events: none;
+}
+
+.button-text {
+	width: auto;
+	text-align: start;
+	font-size: 1.4rem;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.dropdown-icon {
+	width: 20px;
+	margin-top: 2px;
+}
+
+.dropdown {
+	position: absolute;
+	z-index: 10;
+	left: 0px;
+	top: 100%;
+	width: 110px;
+	height: max-content;
+	background-color: #fff;
+	box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.15);
+
+	display: flex;
+	flex-direction: column;
+}
+
+.option {
+	width: 100%;
+	padding: 6px 12px;
+	border: none;
+	border-top: 1px solid var(--gray-200);
+	text-align: start;
+	background-color: transparent;
+	outline: none;
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+	gap: 12px;
+
+	transition: color 200ms ease-in;
+}
+
+.option:hover {
+	color: var(--primary);
+	font-weight: 500;
+}
+
+.option-text {
+	font-size: 1.4rem;
+	text-transform: capitalize;
+}
+
+.dropdown-trigger:hover {
+	color: var(--primary);
+}
+
+.header .hidden {
+	display: none;
+}
+
+.header .invisible {
+	visibility: hidden;
+}

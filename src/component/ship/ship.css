@@ -1,0 +1,79 @@
+.ship {
+	position: absolute;
+	border: 2px solid var(--primary);
+
+	background-color: var(--primary-opacity);
+
+	border-radius: 6px;
+	transition: border-color 200ms ease;
+	cursor: move;
+}
+
+.ship.horizontal {
+	display: flex;
+}
+
+.ship.vertical {
+	display: flex;
+	flex-direction: column;
+}
+
+.ship.ship-2.horizontal {
+	width: 77px;
+	height: 37px;
+}
+
+.ship.ship-3.horizontal {
+	width: 117px;
+	height: 37px;
+}
+
+.ship.ship-4.horizontal {
+	width: 157px;
+	height: 37px;
+}
+.ship.ship-5.horizontal {
+	width: 197px;
+	height: 37px;
+}
+
+.ship.ship-2.vertical {
+	width: 37px;
+	height: 77px;
+}
+
+.ship.ship-3.vertical {
+	width: 37px;
+	height: 117px;
+}
+
+.ship.ship-4.vertical {
+	width: 37px;
+	height: 157px;
+}
+.ship.ship-5.vertical {
+	width: 37px;
+	height: 197px;
+}
+
+.ship-component {
+	flex: 1 0 auto;
+	background-color: rgba(0 0 0 / 0.2);
+}
+
+#bot-board .ship {
+	pointer-events: none;
+	background-color: transparent;
+	opacity: 0;
+}
+
+.ship.sunk,
+#bot-board .ship.sunk {
+	border-color: var(--red);
+	background-color: var(--red-opacity);
+	opacity: 1;
+}
+
+.ship.disabled {
+	pointer-events: none;
+}

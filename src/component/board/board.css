@@ -1,0 +1,10 @@
+.board {
+	grid-area: 2 / 2 / 3 / 3;
+
+	position: relative;
+
+	width: 400px;
+	display: grid;
+	grid-template-columns: repeat(10, 40px);
+	grid-template-rows: repeat(10, 40px);
+}
