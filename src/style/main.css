@@ -1,16 +1,7 @@
 :root {
-	--primary: #65a30d;
-	--primary-opacity: rgba(101, 163, 13, 0.45);
-	--white: #fff;
-	--black: #09090b;
-	--light-gray-1: #f5f5f4;
-	--light-gray-2: rgba(0 0 0 / 0.15);
-	--gray: #a1a1aa;
-	--dark-gray: rgba(0 0 0 /0.58);
-	--ocean-blue: rgb(125, 211, 252, 0.75);
-	--ocean-blue-opacity: rgb(125, 211, 252, 0.3);
-	--red: #ff0000;
-	--red-opacity: rgba(255 0 0 /0.15);
+	--primary: rgb(19 126 162);
+	--gray: rgb(69 68 67);
+	--dark-gray: rgb(19 21 16);
 }
 
 html {
@@ -19,7 +10,41 @@ html {
 
 body {
 	height: 100%;
-	color: var(--black);
+
+	font-family: 'Noto Serif', serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+	font-variation-settings: 'wdth' 100;
+	font-size: 1.8rem;
+
+	color: black;
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Playfair Display', serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+
+	font-family: 'Gilda Display', serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+h2 {
+	font-size: 3.6rem;
+	font-weight: 400;
+}
+
+h3 {
+	font-size: 2rem;
+	font-weight: 400;
+}
+
+p {
+	color: var(--gray);
 }
 
 img {
