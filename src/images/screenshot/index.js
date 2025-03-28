@@ -1,0 +1,12 @@
+export { default as odinRecipes } from './odin-recipes.jpg';
+export { default as landingPage } from './landing-page.jpg';
+export { default as rockPaperScissors } from './rock-paper-scissors.jpg';
+export { default as adminDashboard } from './admin-dashboard.jpg';
+export { default as battleship } from './battleship.jpg';
+export { default as calculator } from './calculator.jpg';
+export { default as etchASketch } from './etch-a-sketch.jpg';
+export { default as restaurant } from './restaurant.jpg';
+export { default as signupForm } from './signup-form.jpg';
+export { default as ticTacToe } from './tic-tac-toe.jpg';
+export { default as todoList } from './todo-list.jpg';
+export { default as weatherApp } from './weather-app.jpg';

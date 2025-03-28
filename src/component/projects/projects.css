@@ -18,13 +18,13 @@
 
 	display: grid;
 	grid-template-columns: 2fr 1fr;
-	grid-template-rows: 1fr 56px 96px;
+	grid-template-rows: 1fr 56px 188px;
 }
 
 .screenshot {
 	grid-area: 1 / 1 / 2 / -1;
 	width: 100%;
-	aspect-ratio: 4 / 3;
+	aspect-ratio: 144 / 90;
 	background-color: rgb(77, 127, 60);
 
 	/* decorative style */
@@ -36,6 +36,12 @@
 	color: white;
 }
 
+.screenshot img {
+	width: 100%;
+	object-fit: cover;
+	filter: brightness(0.95);
+}
+
 .project-title {
 	grid-area: 2 / 1 / 3 / 2;
 	text-align: start;
@@ -45,7 +51,8 @@
 
 .project-desc {
 	grid-area: 3 / 1 / 4 / -1;
-	padding: 0 20px;
+	padding: 20px;
+	font-size: 1.6rem;
 	/* color: var(--gray); */
 }
 
@@ -63,4 +70,10 @@
 	display: block;
 	width: 24px;
 	height: 24px;
+}
+
+.project-title,
+.project-links {
+	border-top: 0.5px solid hsla(0, 100%, 0%, 0.25);
+	border-bottom: 0.5px solid hsla(0, 100%, 0%, 0.25);
 }
