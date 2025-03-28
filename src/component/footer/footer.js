@@ -1,8 +1,12 @@
 import './footer.css';
 
 export function Footer() {
-	const html = `
-    <footer id='contact' class='footer' role='contact-info'>
+	const footerDom = document.createElement('footer');
+	footerDom.id = 'contact';
+	footerDom.className = 'footer';
+	footerDom.role = 'contact-info';
+	footerDom.innerHTML = `
+
       <h2>Contact me</h2>
       <p>
         Please get in touch if you think our work could be mutually beneficial!
@@ -21,7 +25,6 @@ export function Footer() {
         <a href="#">LinkedIn</a>
         <a href="#">Twitter</a>
       </div>
-    <footer>
   `;
-	return html;
+	return footerDom;
 }

@@ -27,3 +27,7 @@
 3. It doesn’t matter when or how you accomplish the responsiveness of this project. There are people who will tell you that you should always start with the mobile experience and then use media-queries to tell your layout how to expand. The ‘mobile-first’ crew does have some good points (Google it!) but in the end, how you accomplish it doesn’t matter as long as it works. Good luck!
 
 4. When you’re done, don’t forget to push it to GitHub, and use GitHub Pages to publish it to the world! You should be proud of what you’ve accomplished here!
+
+# Acknowledge
+
+Photo by <a href="https://unsplash.com/@brucemars?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">bruce mars</a> on <a href="https://unsplash.com/photos/man-holding-his-chin-facing-laptop-computer-xj8qrWvuOEs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
