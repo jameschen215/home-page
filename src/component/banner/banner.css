@@ -77,6 +77,10 @@
 	gap: 12px;
 }
 
+.description p {
+	font-size: 2rem;
+}
+
 .social-links {
 	margin-top: 20px;
 	display: flex;

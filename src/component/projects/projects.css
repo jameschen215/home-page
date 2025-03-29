@@ -39,7 +39,7 @@
 .screenshot img {
 	width: 100%;
 	object-fit: cover;
-	filter: brightness(0.95);
+	filter: brightness(0.9);
 }
 
 .project-title {
@@ -74,6 +74,6 @@
 
 .project-title,
 .project-links {
-	border-top: 0.5px solid hsla(0, 100%, 0%, 0.25);
+	/* border-top: 0.5px solid hsla(0, 100%, 0%, 0.25); */
 	border-bottom: 0.5px solid hsla(0, 100%, 0%, 0.25);
 }

@@ -1,6 +1,6 @@
 import './banner.css';
 
-import photo from '../../images/photo-1-portrait-mobile.jpg';
+import photo from '../../images/photo-mobile-1.jpg';
 
 import {
 	GITHUB_ICON,

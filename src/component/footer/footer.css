@@ -1,0 +1,57 @@
+.footer {
+	display: flex;
+	flex-direction: column;
+}
+
+.contact-info {
+	margin-top: 80px;
+
+	padding: 40px 24px 64px;
+	background-color: var(--primary);
+	color: white;
+	font-size: 1.6rem;
+
+	display: flex;
+	flex-direction: column;
+}
+.contact-info h2 {
+	margin-bottom: 16px;
+}
+
+.contact-info > p {
+	font-size: 2rem;
+}
+
+.contact-info p {
+	color: inherit;
+}
+
+.contact-info address p:nth-of-type(2),
+.contact-info address {
+	margin-top: 30px;
+}
+
+.contact-info a {
+	text-decoration: none;
+	color: inherit;
+	font-style: normal;
+}
+
+.footer .social-links {
+	margin-top: 40px;
+	gap: 40px;
+}
+
+.footer .social-links .icon {
+	width: 40px;
+	height: 40px;
+}
+/* .contact-photo {
+	min-height: 660px;
+} */
+
+.contact-photo img {
+	display: block;
+	width: 100%;
+	object-fit: cover;
+}
