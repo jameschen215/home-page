@@ -1,12 +1,12 @@
-import './projects.css';
+import './work.css';
 
 import { GITHUB_ICON, SHARE_ICON } from '../../script/constant.js';
 import { projectData } from '../../script/data.js';
 
-export function Projects() {
+export function Work() {
 	const projectsDom = document.createElement('section');
-	projectsDom.id = 'projects';
-	projectsDom.className = 'projects';
+	projectsDom.id = 'work';
+	projectsDom.className = 'work';
 
 	projectsDom.innerHTML = `
       <h2>My work</h2>

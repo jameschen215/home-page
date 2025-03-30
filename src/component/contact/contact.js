@@ -1,4 +1,4 @@
-import './footer.css';
+import './contact.css';
 
 import photoMobile2 from '../../images/photo-mobile-2.jpg';
 
@@ -8,10 +8,10 @@ import {
 	TWITTER_ICON,
 } from '../../script/constant.js';
 
-export function Footer() {
-	const footerDom = document.createElement('footer');
+export function Contact() {
+	const footerDom = document.createElement('section');
 	footerDom.id = 'contact';
-	footerDom.className = 'footer';
+	footerDom.className = 'contact';
 	footerDom.role = 'contact-info';
 	footerDom.innerHTML = `
     <div class='contact-info'>

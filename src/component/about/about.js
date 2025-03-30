@@ -1,4 +1,4 @@
-import './banner.css';
+import './about.css';
 
 import photo from '../../images/photo-mobile-1.jpg';
 
@@ -8,14 +8,14 @@ import {
 	TWITTER_ICON,
 } from '../../script/constant.js';
 
-export function Banner() {
-	const bannerDom = document.createElement('section');
-	bannerDom.className = 'banner';
-	bannerDom.role = 'banner';
+export function About() {
+	const aboutDom = document.createElement('section');
+	aboutDom.id = 'about';
+	aboutDom.className = 'about';
 
-	bannerDom.innerHTML = `
+	aboutDom.innerHTML = `
 
-    <div>
+    <div class='banner'>
       <div class='bg-shadow'>
         <div class='bg'></div>
       </div>
@@ -29,7 +29,7 @@ export function Banner() {
       </div>
     </div>
    
-    <div id='about' class='description'>
+    <div class='description'>
       <h2>About me</h2>
       <p>
         Lorem ipsum dolor sit amet, dolore guis consectetur adipiscing elit, sec
@@ -48,5 +48,5 @@ export function Banner() {
     </div>
   `;
 
-	return bannerDom;
+	return aboutDom;
 }

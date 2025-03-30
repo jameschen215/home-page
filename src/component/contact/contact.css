@@ -1,11 +1,9 @@
-.footer {
+.contact {
 	display: flex;
 	flex-direction: column;
 }
 
 .contact-info {
-	margin-top: 80px;
-
 	padding: 40px 24px 64px;
 	background-color: var(--primary);
 	color: white;
@@ -37,12 +35,12 @@
 	font-style: normal;
 }
 
-.footer .social-links {
+.contact .social-links {
 	margin-top: 40px;
 	gap: 40px;
 }
 
-.footer .social-links .icon {
+.contact .social-links .icon {
 	width: 40px;
 	height: 40px;
 }

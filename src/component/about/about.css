@@ -1,14 +1,14 @@
-.banner {
+.about {
 	display: flex;
 	flex-direction: column;
 }
 
-.banner > div:first-of-type {
+.about .banner {
 	position: relative;
 	/* background: red; */
 }
 
-.banner .bg-shadow {
+.about .bg-shadow {
 	width: 100%;
 	height: calc(100vh - 56px);
 
@@ -22,7 +22,7 @@
 	clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 90%);
 }
 
-.banner .photo {
+.about .photo {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -53,13 +53,13 @@
 	flex-direction: column;
 }
 
-.banner h1 {
+.about h1 {
 	font-size: 7.2rem;
 	font-weight: 400;
 	text-shadow: 1px 2px 2px var(--shadow-small), 2px 4px 4px var(--shadow-small);
 }
 
-.banner h1:last-of-type {
+.about h1:last-of-type {
 	margin: -20px 0 -30px;
 	align-self: end;
 }

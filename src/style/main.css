@@ -12,6 +12,9 @@
 
 html {
 	height: 100%;
+	/* Make the fixed header not cover part of the target section 
+		 while nav links clicked */
+	scroll-padding-top: 56px;
 }
 
 body {
