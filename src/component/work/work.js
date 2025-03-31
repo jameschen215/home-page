@@ -4,11 +4,8 @@ import { GITHUB_ICON, SHARE_ICON } from '../../script/constant.js';
 import { projectData } from '../../script/data.js';
 
 export function Work() {
-	const projectsDom = document.createElement('section');
-	projectsDom.id = 'work';
-	projectsDom.className = 'work';
-
-	projectsDom.innerHTML = `
+	const html = `
+    <section id='work' class='work'>
       <h2>My work</h2>
 
       <div class='project-grid'>
@@ -35,9 +32,8 @@ export function Work() {
             `;
 					})
 					.join('')}
-        
-        
       </div>
+    </section>
   `;
-	return projectsDom;
+	return html;
 }

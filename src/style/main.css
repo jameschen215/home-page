@@ -78,12 +78,12 @@ svg {
 	height: 100%;
 	stroke-width: 1px;
 	color: hsl(0 0 0 /0.88);
-	/* color: red; */
 }
 
 #main {
 	position: relative;
 	margin-top: 56px;
+	max-width: 100%;
 	min-height: calc(100% - 56px);
 	/* border: 10px solid #000; */
 

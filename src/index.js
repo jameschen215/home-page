@@ -7,23 +7,40 @@ import { Header } from './component/header/header.js';
 import { About } from './component/about/about.js';
 import { Work } from './component/work/work.js';
 import { Contact } from './component/contact/contact.js';
+import { CLOSE_ICON, MENU_ICON } from './script/constant.js';
 
 const main = document.querySelector('#main');
 
-let selected = JSON.parse(localStorage.getItem('selected')) ?? 'About';
-let isMenuOpen = JSON.parse(localStorage.getItem('isMenuOpen')) ?? false;
+function updateUI() {
+	main.innerHTML = Header() + About() + Work() + Contact();
 
-export function updateUI() {
-	const header = Header();
-	const about = About();
-	const work = Work();
-	const contact = Contact();
+	// Menu toggle handler
+	const menuButton = document.querySelector('.menu-toggle');
+	const navDom = document.querySelector('.nav');
+	const menuLinks = document.querySelectorAll('.header li');
 
-	main.innerHTML = '';
-	main.appendChild(header);
-	main.appendChild(about);
-	main.appendChild(work);
-	main.appendChild(contact);
+	menuButton.addEventListener('click', () => {
+		menuButton.classList.toggle('show');
+		navDom.classList.toggle('show');
+
+		if (menuButton.classList.contains('show')) {
+			menuButton.innerHTML = MENU_ICON;
+		} else {
+			menuButton.innerHTML = CLOSE_ICON;
+		}
+
+		// Reset and replay animation
+		menuButton.style.animation = 'none'; // Clear current animation
+		setTimeout(() => {
+			menuButton.style.animation = 'bounceIn 500ms ease'; // Re-apply animation
+		}, 10); // Small delay to allow reset to take effect
+	});
+
+	menuLinks.forEach((link) => {
+		link.addEventListener('click', (ev) => {
+			navDom.classList.toggle('show');
+		});
+	});
 }
 
 updateUI();
@@ -31,6 +48,8 @@ updateUI();
 function handleScroll() {
 	const sections = document.querySelectorAll('section');
 	const headerHeight = document.querySelector('header').offsetHeight;
+
+	document.querySelector('.nav').classList.remove('show');
 
 	sections.forEach((section) => {
 		const sectionTop = section.offsetTop - headerHeight;
@@ -42,10 +61,15 @@ function handleScroll() {
 			scrollPosition >= sectionTop &&
 			scrollPosition < sectionTop + sectionHeight
 		) {
-			if (selected.toLowerCase() !== section.id.toLowerCase()) {
-				selected = capitalizeFirstLetter(section.id);
-				localStorage.setItem('selected', JSON.stringify(selected));
-			}
+			document.querySelectorAll(`li[data-name]`).forEach((li) => {
+				const name = li.dataset.name;
+
+				if (name === section.id) {
+					li.classList.add('active');
+				} else {
+					li.classList.remove('active');
+				}
+			});
 		}
 	});
 }
@@ -54,11 +78,5 @@ function handleScroll() {
 setTimeout(() => {
 	document.querySelector('body').className = '';
 }, 500);
-
-// Make menu close on load
-window.onload = () => {
-	localStorage.setItem('isMenuOpen', JSON.stringify(false));
-	updateUI();
-};
 
 window.addEventListener('scroll', handleScroll);
