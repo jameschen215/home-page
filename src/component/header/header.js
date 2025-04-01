@@ -6,8 +6,6 @@ import {
 	PROJECT_ICON,
 	CONTACT_ICON,
 	MENU_ICON,
-	CLOSE_ICON,
-	DARK_ICON,
 	LIGHT_ICON,
 } from '../../script/constant.js';
 

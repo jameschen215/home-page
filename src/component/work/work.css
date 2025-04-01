@@ -77,3 +77,15 @@
 	/* border-top: 0.5px solid hsla(0, 100%, 0%, 0.25); */
 	border-bottom: 0.5px solid hsla(0, 100%, 0%, 0.25);
 }
+
+/* Responsive layout */
+@media screen and (min-width: 481px) {
+	.work {
+		padding: 0 5vw;
+	}
+
+	.work h2 {
+		text-align: start;
+		margin-bottom: 12px;
+	}
+}

@@ -85,7 +85,6 @@ svg {
 	margin-top: 56px;
 	max-width: 100%;
 	min-height: calc(100% - 56px);
-	/* border: 10px solid #000; */
 
 	display: flex;
 	flex-direction: column;

@@ -1,6 +1,7 @@
 import './contact.css';
 
-import photoMobile2 from '../../images/photo-mobile-2.jpg';
+import photoMobile from '../../images/contact-photo@mobile.jpg';
+import photoTablet from '../../images/contact-photo@tablet.jpg';
 
 import {
 	GITHUB_ICON,
@@ -33,7 +34,10 @@ export function Contact() {
       </div>
 
       <div class='contact-photo'>
-        <img src='${photoMobile2}' alt='James photo'>
+        <picture>
+          <source media='(min-width: 481px)' srcset='${photoTablet}'>
+          <img src='${photoMobile}' alt='James photo' />
+        </picture>
       </div>
     </section>
   `;

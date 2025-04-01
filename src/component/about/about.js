@@ -1,6 +1,7 @@
 import './about.css';
 
-import photo from '../../images/photo-mobile-1.jpg';
+import photoMobile from '../../images/banner-photo@mobile.jpg';
+import photoTablet from '../../images/banner-photo@tablet.jpg';
 
 import {
 	GITHUB_ICON,
@@ -18,17 +19,21 @@ export function About() {
         </div>
 
         <div class='photo'>
-          <img src='${photo}' alt='James photo' />
+          <picture>
+            <source media='(min-width: 481px)' srcset='${photoTablet}'>
+            <img src='${photoMobile}' alt='James photo' />
+          </picture>
+
           <div class='name'>
             <h1>James</h1>
             <h1>Chen</h1>
-        </div>
+          </div>
         </div>
 
-        
       </div>
     
       <div class='description'>
+        <div class='placeholder'></div>
         <h2>About me</h2>
         <p>
           Lorem ipsum dolor sit amet, dolore guis consectetur adipiscing elit, sec
