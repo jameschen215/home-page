@@ -2,6 +2,7 @@ import './contact.css';
 
 import photoMobile from '../../images/contact-photo@mobile.jpg';
 import photoTablet from '../../images/contact-photo@tablet.jpg';
+import photoDesktop from '../../images/contact-photo@desktop.jpg';
 
 import {
 	GITHUB_ICON,
@@ -35,7 +36,8 @@ export function Contact() {
 
       <div class='contact-photo'>
         <picture>
-          <source media='(min-width: 481px)' srcset='${photoTablet}'>
+        <source media='(min-width: 1025px)' srcset='${photoDesktop}'>
+          <source media='(min-width: 513px)' srcset='${photoTablet}'>
           <img src='${photoMobile}' alt='James photo' />
         </picture>
       </div>

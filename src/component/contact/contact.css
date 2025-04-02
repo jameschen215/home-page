@@ -57,7 +57,14 @@
 }
 
 /* Responsive layout */
-@media screen and (min-width: 481px) {
+
+@media screen and (min-width: 513px) {
+	.contact-info {
+		padding: 10vw 12vw;
+	}
+}
+
+@media screen and (min-width: 673px) {
 	.contact {
 		flex-direction: row;
 		align-items: stretch;
@@ -68,11 +75,38 @@
 	.contact-info {
 		background-color: transparent;
 		align-self: center;
-		flex: 11;
+		flex: 55;
+
+		padding: 0 24px;
 	}
 
 	.contact-photo {
-		flex: 9;
+		flex: 45;
 		/* padding: 8px 8px 8px 0; */
+	}
+}
+
+@media screen and (min-width: 1025px) {
+	.contact {
+		min-height: 75vh;
+	}
+
+	.contact-info {
+		background-color: transparent;
+		align-self: center;
+		flex: 45;
+
+		padding: 0 5vw;
+
+		align-items: start;
+	}
+
+	.social-links {
+		align-self: flex-start;
+	}
+
+	.contact-photo {
+		flex: 55;
+		padding: 5vw 5vw 5vw 0;
 	}
 }

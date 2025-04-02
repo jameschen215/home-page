@@ -88,6 +88,7 @@ svg {
 #main {
 	/* margin-top: 56px; */
 	width: 100%;
+	max-width: 1152px;
 	background-color: white;
 
 	display: flex;
@@ -96,11 +97,14 @@ svg {
 	gap: 80px;
 }
 
-@media screen and (min-width: 961px) {
+@media screen and (min-width: 1025px) {
 	#main {
-		max-width: 1440px;
-
 		box-shadow: 2px 4px 8px var(--shadow-large),
 			4px 8px 12px var(--shadow-large);
+	}
+
+	h2 {
+		font-weight: 500;
+		font-size: 4rem;
 	}
 }

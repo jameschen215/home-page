@@ -78,7 +78,7 @@
 }
 
 /* Responsive layout */
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 513px) {
 	.work {
 		padding: 0 5vw;
 	}
@@ -90,9 +90,16 @@
 }
 
 /* Desktop */
-@media screen and (min-width: 961px) {
+@media screen and (min-width: 673px) {
+	.project-grid {
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 3vw;
+	}
+}
+
+@media screen and (min-width: 1025px) {
 	.project-grid {
 		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 2vw;
+		gap: 3vw;
 	}
 }
