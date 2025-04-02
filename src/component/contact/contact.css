@@ -73,6 +73,6 @@
 
 	.contact-photo {
 		flex: 9;
-		padding: 8px 8px 8px 0;
+		/* padding: 8px 8px 8px 0; */
 	}
 }

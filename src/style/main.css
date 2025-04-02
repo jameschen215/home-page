@@ -28,6 +28,11 @@ body {
 	font-size: 1.8rem;
 
 	color: black;
+
+	display: flex;
+	justify-content: center;
+
+	background-color: hsl(0deg 0% 0% / 0.05);
 }
 
 .preload * {
@@ -81,13 +86,21 @@ svg {
 }
 
 #main {
-	position: relative;
-	margin-top: 56px;
-	max-width: 100%;
-	min-height: calc(100% - 56px);
+	/* margin-top: 56px; */
+	width: 100%;
+	background-color: white;
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 80px;
+}
+
+@media screen and (min-width: 961px) {
+	#main {
+		max-width: 1440px;
+
+		box-shadow: 2px 4px 8px var(--shadow-large),
+			4px 8px 12px var(--shadow-large);
+	}
 }
