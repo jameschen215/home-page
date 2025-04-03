@@ -21,6 +21,11 @@
 	grid-template-rows: 1fr 56px 188px;
 }
 
+.project:hover {
+	/* todo */
+	transform: translateY(-5px);
+}
+
 .screenshot {
 	grid-area: 1 / 1 / 2 / -1;
 	width: 100%;
@@ -45,13 +50,13 @@
 .project-title {
 	grid-area: 2 / 1 / 3 / 2;
 	text-align: start;
-	padding: 0 20px;
+	padding: 0 10px;
 	line-height: 56px;
 }
 
 .project-desc {
 	grid-area: 3 / 1 / 4 / -1;
-	padding: 20px;
+	padding: 10px;
 	font-size: 1.6rem;
 	/* color: var(--gray); */
 }
@@ -66,10 +71,26 @@
 	gap: 10px;
 }
 
-.project-links .icon {
+.work .link {
 	display: block;
 	width: 24px;
 	height: 24px;
+	background-color: transparent;
+}
+
+.work .link .link-bg {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	height: 100%;
+
+	will-change: transform;
+}
+
+.work .link:hover .link-bg {
+	animation: gelatine 500ms ease;
 }
 
 .project-title,
@@ -98,8 +119,11 @@
 }
 
 @media screen and (min-width: 1025px) {
+	.work {
+		padding: 0 2.5vw;
+	}
 	.project-grid {
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 3vw;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2vw;
 	}
 }

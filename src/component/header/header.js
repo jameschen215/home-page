@@ -30,11 +30,17 @@ export function Header() {
 
 	const html = `
 		<header class='header'>
-			<div>
-				<div class='brand'>James Chen</div>
-				<button class='theme-toggle'>${LIGHT_ICON}</button>
-				<button class='menu-toggle show'>${MENU_ICON}</button>
-			</div>
+				<a class='brand' href='#'>James Chen</a>
+				<button class='theme-toggle'>
+					<span class='btn-bg'>
+						${LIGHT_ICON}
+					</span>
+				</button>
+				<button class='menu-toggle show'>
+					<span class='btn-bg'>
+						${MENU_ICON}
+					</span>
+				</button>
 
 			<nav class='nav'>
 				<ul class='nav-links'>

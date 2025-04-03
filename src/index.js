@@ -54,7 +54,10 @@ function handleScroll() {
 	sections.forEach((section) => {
 		const sectionTop = section.offsetTop - headerHeight;
 		const sectionHeight = section.clientHeight;
-		const scrollPosition = window.scrollY;
+
+		// Make the scroll position always be in the middle of the viewport
+		// in case sections whose height is less than 100vh can not be reached
+		const scrollPosition = window.scrollY + window.innerHeight / 2;
 
 		// Check if current scroll position is within this section
 		if (
@@ -64,9 +67,9 @@ function handleScroll() {
 			document.querySelectorAll(`li[data-name]`).forEach((li) => {
 				const name = li.dataset.name;
 
-				if (name === section.id) {
+				if (name === section.id && !li.classList.contains('active')) {
 					li.classList.add('active');
-				} else {
+				} else if (name !== section.id && li.classList.contains('active')) {
 					li.classList.remove('active');
 				}
 			});

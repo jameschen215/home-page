@@ -85,6 +85,11 @@ svg {
 	color: hsl(0 0 0 /0.88);
 }
 
+svg.twitter {
+	width: 82%;
+	height: 82%;
+}
+
 #main {
 	/* margin-top: 56px; */
 	width: 100%;
@@ -97,6 +102,40 @@ svg {
 	gap: 80px;
 }
 
+.social-links {
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+}
+
+.social-links a {
+	display: block;
+	height: 30px;
+	width: 30px;
+	will-change: transform;
+	background-color: transparent;
+	padding: 0;
+}
+
+.social-links .link-bg {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 100%;
+	width: 100%;
+	will-change: transform;
+}
+
+.social-links a:hover .link-bg {
+	animation: gelatine 500ms ease;
+}
+
+.social-links .icon svg {
+	color: var(--dark-gray);
+}
+
 @media screen and (min-width: 1025px) {
 	#main {
 		box-shadow: 2px 4px 8px var(--shadow-large),
@@ -106,5 +145,86 @@ svg {
 	h2 {
 		font-weight: 500;
 		font-size: 4rem;
+	}
+}
+
+/* Animations */
+
+@keyframes slideIn {
+	from {
+		visibility: hidden;
+		opacity: 0;
+		transform: translateX(100%);
+	}
+
+	to {
+		visibility: visible;
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideOut {
+	from {
+		visibility: visible;
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		visibility: hidden;
+		opacity: 0;
+		transform: translateX(100%);
+	}
+}
+
+@keyframes bounceIn {
+	0% {
+		opacity: 0;
+		transform: scale(0.3);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1.05);
+	}
+	70% {
+		transform: scale(0.9);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes hiThere {
+	30% {
+		transform: scale(1.2);
+	}
+	40%,
+	60% {
+		transform: rotate(-20deg) scale(1.2);
+	}
+	50% {
+		transform: rotate(20deg) scale(1.2);
+	}
+	70% {
+		transform: rotate(0deg) scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes gelatine {
+	from,
+	to {
+		transform: scale(1, 1);
+	}
+	25% {
+		transform: scale(0.9, 1.1);
+	}
+	50% {
+		transform: scale(1.1, 0.9);
+	}
+	75% {
+		transform: scale(0.95, 1.05);
 	}
 }

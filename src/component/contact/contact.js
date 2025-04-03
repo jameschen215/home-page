@@ -28,9 +28,21 @@ export function Contact() {
           </p>
         </address>
         <div class="social-links">
-          <a href="#"><div class='icon'>${GITHUB_ICON}</div></a>
-          <a href="#"><div class='icon'>${LINKEDIN_ICON}</div></a>
-          <a href="#"><div class='icon'>${TWITTER_ICON}</div></a>
+          <a href="#">
+            <span class='link-bg'>
+              <div class='icon'>${GITHUB_ICON}</div>
+            </span>
+          </a>
+          <a href="#">
+            <span class='link-bg'>
+              <div class='icon'>${LINKEDIN_ICON}</div>
+            </span>
+          </a>
+          <a href="#">
+            <span class='link-bg'>
+              <div class='icon'>${TWITTER_ICON}</div>
+            </span>
+          </a>
         </div>
       </div>
 
