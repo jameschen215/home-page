@@ -62,7 +62,7 @@
 	padding: 8px;
 
 	font-size: 7.2rem;
-	color: white;
+	color: var(--banner-name);
 	text-shadow: 1px 2px 2px var(--shadow-small), 2px 4px 4px var(--shadow-small);
 
 	display: flex;
@@ -157,7 +157,7 @@
 		left: 10%;
 		width: 80%;
 		height: 48%;
-		background-color: white;
+		background-color: var(--banner-bg);
 		box-shadow: 2px 4px 8px var(--shadow-medium),
 			4px 8px 12px var(--shadow-medium);
 

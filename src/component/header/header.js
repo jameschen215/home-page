@@ -30,12 +30,12 @@ export function Header() {
 	const html = `
 		<header class='header'>
 				<a class='brand' href='#'>James Chen</a>
-				<button class='theme-toggle'>
+				<button class='theme-toggle' aria-label='Toggle dark mode' aria-pressed='false'>
 					<span class='btn-bg'>
 						${LIGHT_ICON}
 					</span>
 				</button>
-				<button class='menu-toggle show'>
+				<button class='menu-toggle hide'>
 					<span class='btn-bg'>
 						${MENU_ICON}
 					</span>

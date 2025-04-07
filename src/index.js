@@ -5,48 +5,153 @@ import { Header } from './component/header/header.js';
 import { About } from './component/about/about.js';
 import { Work } from './component/work/work.js';
 import { Contact } from './component/contact/contact.js';
-import { CLOSE_ICON, MENU_ICON } from './script/constant.js';
+import {
+	CLOSE_ICON,
+	DARK_ICON,
+	LIGHT_ICON,
+	MENU_ICON,
+} from './script/constant.js';
 
 const main = document.querySelector('#main');
 
-function updateUI() {
-	main.innerHTML = Header() + About() + Work() + Contact();
+function changeAndAnimateButtonIcon(button) {
+	if (button.classList.contains('show')) {
+		button.classList.remove('show');
+		button.classList.add('hide');
+		button.innerHTML = MENU_ICON;
+	} else if (button.classList.contains('hide')) {
+		button.classList.remove('hide');
+		button.classList.add('show');
+		button.innerHTML = CLOSE_ICON;
+	} else if (button.classList.contains('light')) {
+		button.classList.remove('light');
+		button.classList.add('dark');
+		button.innerHTML = LIGHT_ICON;
+	} else if (button.classList.contains('dark')) {
+		button.classList.remove('dark');
+		button.classList.add('light');
+		button.innerHTML = DARK_ICON;
+	}
 
+	// Reset and replay animation
+	button.style.animation = 'none'; // Clear current animation
+	setTimeout(() => {
+		button.style.animation = 'bounceIn 500ms ease'; // Re-apply animation
+	}, 10); // Small delay to allow reset to take effect
+}
+
+function handleMenuToggle() {
 	// Menu toggle handler
 	const menuButton = document.querySelector('.menu-toggle');
-	const themeButton = document.querySelector('.theme-toggle');
 	const navDom = document.querySelector('.nav');
-	const menuLinks = document.querySelectorAll('.header li');
 
 	menuButton.addEventListener('click', () => {
-		menuButton.classList.toggle('show');
 		navDom.classList.toggle('show');
-
-		if (menuButton.classList.contains('show')) {
-			menuButton.innerHTML = MENU_ICON;
-		} else {
-			menuButton.innerHTML = CLOSE_ICON;
-		}
-
-		// Reset and replay animation
-		menuButton.style.animation = 'none'; // Clear current animation
-		setTimeout(() => {
-			menuButton.style.animation = 'bounceIn 500ms ease'; // Re-apply animation
-		}, 10); // Small delay to allow reset to take effect
+		changeAndAnimateButtonIcon(menuButton);
 	});
+}
 
-	themeButton.addEventListener('click', () => {
-		//
-	});
+function handleMenuItemClick() {
+	const menuLinks = document.querySelectorAll('.header li');
+	const menuButton = document.querySelector('.menu-toggle');
+	const navDom = document.querySelector('.nav');
 
 	menuLinks.forEach((link) => {
 		link.addEventListener('click', (ev) => {
 			navDom.classList.toggle('show');
+
+			changeAndAnimateButtonIcon(menuButton);
 		});
 	});
 }
 
-updateUI();
+// TODO: make the menu hide when click out of it
+
+function setInitialTheme() {
+	const button = document.querySelector('.theme-toggle');
+	const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+	const currentTheme = localStorage.getItem('theme');
+
+	// Set initial theme
+	if (currentTheme === 'dark') {
+		document.body.classList.add('dark-theme');
+		button.setAttribute('aria-pressed', true);
+		button.classList.add('light');
+	} else if (currentTheme === 'light') {
+		document.body.classList.add('light-theme');
+		button.setAttribute('aria-pressed', false);
+		button.classList.add('dark');
+	} else if (prefersDarkScheme.matches) {
+		document.body.classList.add('dark-theme');
+		localStorage.setItem('theme', 'dark');
+		button.setAttribute('aria-pressed', true);
+		button.classList.add('light');
+	} else {
+		document.body.classList.add('light-theme');
+		localStorage.setItem('theme', 'light');
+		button.setAttribute('aria-pressed', 'false');
+		button.classList.add('dark');
+	}
+	changeAndAnimateButtonIcon(button);
+
+	// Handle toggle on click
+	button.addEventListener('click', () => {
+		const isDark = document.body.classList.contains('dark-theme');
+		console.log(isDark);
+
+		document.body.classList.remove('light-theme', 'dark-theme');
+		button.classList.remove('light', 'dark');
+
+		if (isDark) {
+			document.body.classList.add('light-theme');
+			localStorage.setItem('theme', 'light');
+			button.setAttribute('aria-pressed', false);
+			button.classList.add('light');
+		} else {
+			document.body.classList.add('dark-theme');
+			localStorage.setItem('theme', 'dark');
+			button.setAttribute('aria-pressed', true);
+			button.classList.add('dark');
+		}
+		changeAndAnimateButtonIcon(button);
+	});
+
+	// Listen for system preference changes
+	prefersDarkScheme.addEventListener('change', (ev) => {
+		if (!localStorage.getItem('theme')) {
+			document.body.classList.remove('light-theme', 'dark-theme');
+			document.body.classList.add(ev.matches ? 'dark-theme' : 'light-theme');
+			button.setAttribute('aria-pressed', ev.matches);
+		}
+	});
+}
+
+function handleThemeToggle() {
+	const button = document.querySelector('.theme-toggle');
+	const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+	button.addEventListener('click', () => {
+		console.log('clicked');
+	});
+}
+
+(function updateUI() {
+	main.innerHTML = Header() + About() + Work() + Contact();
+
+	// Menu toggle handler
+	handleMenuToggle();
+
+	// Menu item click handler
+	handleMenuItemClick();
+
+	// Theme toggle handler
+	setInitialTheme();
+})();
+
+// Disable animation when loading page
+setTimeout(() => {
+	document.querySelector('body').className = '';
+}, 500);
 
 function handleScroll() {
 	const sections = document.querySelectorAll('section');
@@ -79,10 +184,5 @@ function handleScroll() {
 		}
 	});
 }
-
-// Disable animation when loading page
-setTimeout(() => {
-	document.querySelector('body').className = '';
-}, 500);
 
 window.addEventListener('scroll', handleScroll);

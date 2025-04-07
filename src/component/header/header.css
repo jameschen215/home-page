@@ -2,7 +2,7 @@
 	position: fixed;
 	width: 100%;
 	height: 56px;
-	background: white;
+	background: var(--main-bg);
 	top: 0;
 	left: 0;
 	z-index: 5;
@@ -17,7 +17,7 @@
 
 .brand {
 	border: none;
-	color: var(--primary);
+	color: var(--text-color);
 	text-decoration: none;
 	font-weight: 400;
 }
@@ -29,6 +29,10 @@
 	background-color: transparent;
 
 	cursor: pointer;
+}
+
+.header button svg {
+	color: var(--icon-color-light);
 }
 
 .header button .btn-bg {
@@ -59,7 +63,7 @@
 	margin: 20px;
 	padding: 30px 12px;
 	border-radius: 6px;
-	background: white;
+	background: var(--main-bg);
 	box-shadow: 4px 8px 8px var(--shadow-large), 8px 16px 16px var(--shadow-large);
 
 	visibility: hidden;
@@ -78,25 +82,25 @@
 .nav-links {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	/* gap: 10px; */
 }
 
 .nav-links .icon {
 	width: 22px;
 	height: 22px;
 	display: inline-block;
-	color: rgba(0, 0, 0, 0.68);
+	color: var(--icon-color-light);
 }
 
 .nav-links li {
 	list-style-type: none;
-	border-bottom: 1px solid hsl(0deg 0% 0% / 0.1);
+	border-bottom: 1px solid var(--border-color-light);
 }
 
 .nav-links li.active,
 .nav-links li:hover,
 .nav-links li:focus {
-	background-color: hsl(0 0 0 / 0.05);
+	background-color: var(--nav-link-bg-color);
 }
 
 .nav-links li a {
@@ -165,7 +169,7 @@
 		left: 0;
 		width: 100%;
 		height: 2px;
-		background-color: hsl(0deg 0% 0% / 0.9);
+		background-color: var(--border-color-dark);
 		transform: scaleX(0);
 		opacity: 0;
 
