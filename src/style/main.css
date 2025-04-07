@@ -200,8 +200,8 @@ svg.twitter {
 
 .social-links a {
 	display: block;
-	height: 30px;
-	width: 30px;
+	height: 24px;
+	width: 24px;
 	will-change: transform;
 	background-color: transparent;
 	padding: 0;

@@ -32,7 +32,7 @@
 }
 
 .header button svg {
-	color: var(--icon-color-light);
+	color: var(--icon-color-dark);
 }
 
 .header button .btn-bg {
