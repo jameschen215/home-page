@@ -1,6 +1,5 @@
 import './header.css';
 
-import { updateUI } from '../../index.js';
 import {
 	ABOUT_ICON,
 	PROJECT_ICON,

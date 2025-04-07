@@ -1,8 +1,6 @@
 import './style/reset.css';
 import './style/main.css';
 
-import { capitalizeFirstLetter } from './script/helper.js';
-
 import { Header } from './component/header/header.js';
 import { About } from './component/about/about.js';
 import { Work } from './component/work/work.js';
@@ -16,6 +14,7 @@ function updateUI() {
 
 	// Menu toggle handler
 	const menuButton = document.querySelector('.menu-toggle');
+	const themeButton = document.querySelector('.theme-toggle');
 	const navDom = document.querySelector('.nav');
 	const menuLinks = document.querySelectorAll('.header li');
 
@@ -34,6 +33,10 @@ function updateUI() {
 		setTimeout(() => {
 			menuButton.style.animation = 'bounceIn 500ms ease'; // Re-apply animation
 		}, 10); // Small delay to allow reset to take effect
+	});
+
+	themeButton.addEventListener('click', () => {
+		//
 	});
 
 	menuLinks.forEach((link) => {

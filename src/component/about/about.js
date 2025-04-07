@@ -4,11 +4,7 @@ import photoMobile from '../../images/banner-photo@mobile.jpg';
 import photoTablet from '../../images/banner-photo@tablet.jpg';
 import photoDesktop from '../../images/banner-photo@desktop.jpg';
 
-import {
-	GITHUB_ICON,
-	LINKEDIN_ICON,
-	TWITTER_ICON,
-} from '../../script/constant.js';
+import { SOCIAL_LINKS } from '../../script/constant.js';
 
 export function About() {
 	const html = `
@@ -44,31 +40,18 @@ export function About() {
         </p>
 
         <div class="social-links">
-          <a href="#">
+          ${SOCIAL_LINKS.map(
+						({ href, icon }) => `<a href="${href}">
             <span class='link-bg'>
-              <div class='icon'>${GITHUB_ICON}</div>
+              <div class='icon'>${icon}</div>
             </span>
-          </a>
-          <a href="#">
-            <span class='link-bg'>
-              <div class='icon'>${LINKEDIN_ICON}</div>
-            </span>
-          </a>
-          <a href="#">
-            <span class='link-bg'>
-              <div class='icon'>${TWITTER_ICON}</div>
-            </span>
-          </a>
+          </a>`
+					).join('')}
+          
         </div>
       </div>
     </section>
   `;
 
 	return html;
-}
-
-{
-	/* <div class="bg-shadow">
-	<div class="bg"></div>
-</div>; */
 }

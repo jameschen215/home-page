@@ -4,11 +4,7 @@ import photoMobile from '../../images/contact-photo@mobile.jpg';
 import photoTablet from '../../images/contact-photo@tablet.jpg';
 import photoDesktop from '../../images/contact-photo@desktop.jpg';
 
-import {
-	GITHUB_ICON,
-	LINKEDIN_ICON,
-	TWITTER_ICON,
-} from '../../script/constant.js';
+import { SOCIAL_LINKS } from '../../script/constant.js';
 
 export function Contact() {
 	const html = `
@@ -28,21 +24,13 @@ export function Contact() {
           </p>
         </address>
         <div class="social-links">
-          <a href="#">
-            <span class='link-bg'>
-              <div class='icon'>${GITHUB_ICON}</div>
-            </span>
-          </a>
-          <a href="#">
-            <span class='link-bg'>
-              <div class='icon'>${LINKEDIN_ICON}</div>
-            </span>
-          </a>
-          <a href="#">
-            <span class='link-bg'>
-              <div class='icon'>${TWITTER_ICON}</div>
-            </span>
-          </a>
+        ${SOCIAL_LINKS.map(
+					({ href, icon }) => `<a href="${href}">
+          <span class='link-bg'>
+            <div class='icon'>${icon}</div>
+          </span>
+        </a>`
+				).join('')}
         </div>
       </div>
 
