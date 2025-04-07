@@ -30,10 +30,10 @@
 	transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
 }
 
-.project-content:hover {
+.project:hover .project-content {
 	/* todo */
 	transform: translateY(-10px);
-	box-shadow: 8px 16px 16px hsla(0, 100%, 0%, 0.1);
+	box-shadow: 8px 8px 8px var(--shadow-medium);
 }
 
 .screenshot {

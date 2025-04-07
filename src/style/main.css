@@ -3,9 +3,10 @@
 	--bg: hsl(210deg 5% 95%);
 	--main-bg: hsl(0deg 0% 100%);
 	--text-color: hsl(0deg 0% 10%);
+	--contact-text-color: hsl(0deg 0% 95%);
 	--para-color: hsl(210deg 5% 25%);
 	--icon-color-light: hsl(60deg 90% 5%);
-	--icon-color-dark: hsl(210deg 30% 5%);
+	--icon-color-dark: hsl(210deg 20% 5%);
 	--border-color-light: hsl(0deg 0% 85%);
 	--border-color-dark: hsl(0deg 0% 30%);
 	--nav-link-bg-color: hsl(0deg 0% 95%);
@@ -13,17 +14,20 @@
 	--banner-bg: hsl(0deg 0% 100%);
 	--card-bg: hsl(0deg 0% 100%);
 
-	/* TODO: SHADOWS */
-	--shadow-large: hsl(240deg 20% 15% / 0.1);
-	--shadow-small: hsl(240deg 20% 15% / 0.2);
-	--shadow-medium: hsl(240deg 20% 15% / 0.15);
+	/* SHADOWS */
+	--shadow-large: hsl(240deg 10% 15% / 0.1);
+	--shadow-small: hsl(240deg 10% 15% / 0.2);
+	--shadow-medium: hsl(240deg 10% 15% / 0.15);
 }
 
 body.dark-theme {
 	--primary: hsl(195 50% 25%);
-	--bg: hsl(0deg 0% 5%);
-	--main-bg: hsl(0deg 0% 10%);
-	--text-color: hsl(0deg 0% 90%);
+	--bg: hsl(0deg 0% 10%);
+	--main-bg: hsl(0deg 0% 12.5%);
+	--card-bg: hsl(0deg 0% 15%);
+	--banner-bg: hsl(0deg 0% 15%);
+	--text-color: hsl(0deg 0% 95%);
+
 	--para-color: hsl(0deg 0% 80%);
 	--icon-color-light: hsl(60deg 0% 80%);
 	--icon-color-dark: hsl(210deg 20% 80%);
@@ -31,8 +35,11 @@ body.dark-theme {
 	--border-color-dark: hsl(0deg 0% 60%);
 	--nav-link-bg-color: hsl(0deg 0% 0% / 0.075);
 	--banner-name: hsl(0deg, 0%, 90%);
-	--banner-bg: hsl(0deg 0% 15%);
-	--card-bg: hsl(0deg 0% 15%);
+
+	/* TODO: SHADOWS */
+	--shadow-small: hsl(240deg 10% 0% / 0.3);
+	--shadow-medium: hsl(240deg 10% 0% / 0.2);
+	--shadow-large: hsl(240deg 10% 0% / 0.1);
 }
 
 body.dark-theme img {
@@ -42,18 +49,24 @@ body.dark-theme img {
 @media (prefers-color-scheme: dark) {
 	:root {
 		--primary: hsl(195 50% 25%);
-		--bg: hsl(0deg 0% 5%);
-		--main-bg: hsl(0deg 0% 10%);
-		--text-color: hsl(0deg 0% 90%);
+		--bg: hsl(0deg 0% 10%);
+		--main-bg: hsl(0deg 0% 12.5%);
+		--card-bg: hsl(0deg 0% 15%);
+		--banner-bg: hsl(0deg 0% 15%);
+		--text-color: hsl(0deg 0% 95%);
 		--para-color: hsl(0deg 0% 80%);
+
 		--icon-color-light: hsl(60deg 0% 80%);
 		--icon-color-dark: hsl(210deg 20% 80%);
 		--border-color-light: hsl(0deg 0% 25%);
 		--border-color-dark: hsl(0deg 0% 60%);
 		--nav-link-bg-color: hsl(0deg 0% 0% / 0.075);
 		--banner-name: hsl(0deg, 0%, 90%);
-		--banner-bg: hsl(0deg 0% 15%);
-		--card-bg: hsl(0deg 0% 15%);
+
+		/* TODO: SHADOWS */
+		--shadow-small: hsl(240deg 10% 0% / 0.3);
+		--shadow-medium: hsl(240deg 10% 0% / 0.2);
+		--shadow-large: hsl(240deg 10% 0% / 0.1);
 	}
 
 	body.light-theme {
@@ -63,7 +76,7 @@ body.dark-theme img {
 		--text-color: hsl(0deg 0% 10%);
 		--para-color: hsl(210deg 5% 25%);
 		--icon-color-light: hsl(60deg 90% 5%);
-		--icon-color-dark: hsl(210deg 30% 5%);
+		--icon-color-dark: hsl(210deg 20% 5%);
 		--border-color-light: hsl(0deg 0% 85%);
 		--border-color-dark: hsl(0deg 0% 30%);
 		--nav-link-bg-color: hsl(0deg 0% 95%);
@@ -71,10 +84,10 @@ body.dark-theme img {
 		--banner-bg: hsl(0deg 0% 100%);
 		--card-bg: hsl(0deg 0% 100%);
 
-		/* TODO: SHADOWS */
-		--shadow-large: hsl(240deg 20% 15% / 0.1);
-		--shadow-small: hsl(240deg 20% 15% / 0.2);
-		--shadow-medium: hsl(240deg 20% 15% / 0.15);
+		/* SHADOWS */
+		--shadow-large: hsl(240deg 10% 15% / 0.1);
+		--shadow-small: hsl(240deg 10% 15% / 0.2);
+		--shadow-medium: hsl(240deg 10% 15% / 0.15);
 	}
 }
 
@@ -192,6 +205,11 @@ svg.twitter {
 	will-change: transform;
 	background-color: transparent;
 	padding: 0;
+}
+
+.social-links a:hover svg,
+.social-links a:focus svg {
+	color: var(--text-color);
 }
 
 .social-links .link-bg {
