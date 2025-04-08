@@ -22,10 +22,10 @@ export function Work() {
                   <p class='project-desc'>${desc}</p>
 
                   <div class="project-links">
-                    <a class='link' href="${link}">
+                    <a class='link' href="${link}" target='_blank'>
                       <span class='link-bg'>${GITHUB_ICON}</span>
                     </a>
-                    <a class='link' href="${demo}">
+                    <a class='link' href="${demo}" target='_blank'>
                       <span class='link-bg'>${SHARE_ICON}</span>
                     </a>
                   </div>

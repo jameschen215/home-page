@@ -45,7 +45,9 @@ function handleMenuToggle() {
 	const menuButton = document.querySelector('.menu-toggle');
 	const navDom = document.querySelector('.nav');
 
-	menuButton.addEventListener('click', () => {
+	menuButton.addEventListener('click', (ev) => {
+		ev.stopPropagation();
+
 		navDom.classList.toggle('show');
 		changeAndAnimateButtonIcon(menuButton);
 	});
@@ -66,6 +68,25 @@ function handleMenuItemClick() {
 }
 
 // TODO: make the menu hide when click out of it
+function handleClickOutOfTheMenu() {
+	const menuButton = document.querySelector('.menu-toggle');
+	const navDom = document.querySelector('.nav');
+
+	document.addEventListener('click', (ev) => {
+		// Check if the click is outside both the menu and the button that opens it
+		const clickedOutside =
+			!navDom.contains(ev.target) && !menuButton.contains(ev.target);
+
+		console.log(ev.target);
+		console.log(menuButton.contains(ev.target));
+
+		// If the menu is open and the click was outside, close it
+		if (navDom.classList.contains('show') && clickedOutside) {
+			navDom.classList.remove('show');
+			// Add any other code needed to properly close your menu
+		}
+	});
+}
 
 function setInitialTheme() {
 	const button = document.querySelector('.theme-toggle');
@@ -152,6 +173,9 @@ function handlePreferDarkSchemeChange() {
 
 	// Menu item click handler
 	handleMenuItemClick();
+
+	// Hide the menu when clicking outside
+	handleClickOutOfTheMenu();
 })();
 
 // Disable animation when loading page
@@ -169,9 +193,9 @@ function handleScroll() {
 		const sectionTop = section.offsetTop - headerHeight;
 		const sectionHeight = section.clientHeight;
 
-		// Make the scroll position always be in the middle of the viewport
+		// Make the scroll position always be in the 3 quarters down of the viewport
 		// in case sections whose height is less than 100vh can not be reached
-		const scrollPosition = window.scrollY + window.innerHeight / 2;
+		const scrollPosition = window.scrollY + (window.innerHeight / 4) * 3;
 
 		// Check if current scroll position is within this section
 		if (
@@ -192,3 +216,8 @@ function handleScroll() {
 }
 
 window.addEventListener('scroll', handleScroll);
+
+// Set the 'About' navigation item as the default active option.
+window.addEventListener('load', () => {
+	document.querySelector('.nav li[data-name="about"]').classList.add('active');
+});

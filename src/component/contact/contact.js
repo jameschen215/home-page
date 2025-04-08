@@ -15,17 +15,15 @@ export function Contact() {
           Please get in touch if you think our work could be mutually beneficial!
         </p>
         <address>
-          <p>1234 Random Road<br>Random Town, California 12345</p>
-          <p><a href="tel:+15555555555">555-555-5555</a></p>
           <p>
-            <a href="mailto:ashleywilliams.is.not.real@gmail.com">
-              ashleywilliams.is.not.real@gmail.com
+            <a href="mailto:chenjames215@gmail.com">
+              chenjames215@gmail.com
             </a>
           </p>
         </address>
         <div class="social-links">
         ${SOCIAL_LINKS.map(
-					({ href, icon }) => `<a href="${href}">
+					({ href, icon }) => `<a href="${href}" target='_blank'>
           <span class='link-bg'>
             <div class='icon'>${icon}</div>
           </span>

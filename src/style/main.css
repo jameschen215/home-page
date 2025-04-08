@@ -28,12 +28,12 @@ body.dark-theme {
 	--banner-bg: hsl(0deg 0% 15%);
 	--text-color: hsl(0deg 0% 95%);
 
-	--para-color: hsl(0deg 0% 80%);
+	--para-color: hsl(0deg 0% 85%);
 	--icon-color-light: hsl(60deg 0% 80%);
 	--icon-color-dark: hsl(210deg 20% 80%);
 	--border-color-light: hsl(0deg 0% 25%);
 	--border-color-dark: hsl(0deg 0% 60%);
-	--nav-link-bg-color: hsl(0deg 0% 0% / 0.075);
+	--nav-link-bg-color: hsl(0deg 0% 15%);
 	--banner-name: hsl(0deg, 0%, 90%);
 
 	/* TODO: SHADOWS */

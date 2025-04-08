@@ -32,16 +32,12 @@ export function About() {
         <div class='placeholder'></div>
         <h2>About me</h2>
         <p>
-          Lorem ipsum dolor sit amet, dolore guis consectetur adipiscing elit, sec
-          do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ut enim ad minim veniam. guis nostrud exercitatior
-          nisi Dus aute irure dolor In reprehenderit in volupta
-          te velit esse Cillum dolore eu tugiat nulla pariatur.
+          Hey there! I’m James, a 43-year-old Chinese guy passionate about computer science and web development. I enjoyed Harvard’s CS50 course and am currently exploring The Odin Project to enhance my skills. Whether debugging a tricky problem or building something new, I love chasing cool web ideas and tech when I'm not gaming!
         </p>
 
         <div class="social-links">
           ${SOCIAL_LINKS.map(
-						({ href, icon }) => `<a href="${href}">
+						({ href, icon }) => `<a href="${href}" target='_blank'>
             <span class='link-bg'>
               <div class='icon'>${icon}</div>
             </span>
