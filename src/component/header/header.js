@@ -5,7 +5,7 @@ import {
 	PROJECT_ICON,
 	CONTACT_ICON,
 	MENU_ICON,
-	LIGHT_ICON,
+	DARK_ICON,
 } from '../../script/constant.js';
 
 import logoForDarkMode from '../../images/logo@dark.png';
@@ -43,7 +43,7 @@ export function Header() {
 				</a>
 				<button class='theme-toggle' aria-label='Toggle dark mode' aria-pressed='false'>
 					<span class='btn-bg'>
-						${LIGHT_ICON}
+						${DARK_ICON}
 					</span>
 				</button>
 				<button class='menu-toggle hide'>

@@ -24,13 +24,13 @@ function changeAndAnimateButtonIcon(button) {
 		button.classList.add('show');
 		button.innerHTML = `<span class='btn-bg'>${CLOSE_ICON}</span>`;
 	} else if (button.classList.contains('light')) {
-		button.classList.remove('light');
-		button.classList.add('dark');
-		button.innerHTML = `<span class='btn-bg'>${LIGHT_ICON}</span>`;
-	} else if (button.classList.contains('dark')) {
 		button.classList.remove('dark');
 		button.classList.add('light');
 		button.innerHTML = `<span class='btn-bg'>${DARK_ICON}</span>`;
+	} else if (button.classList.contains('dark')) {
+		button.classList.remove('light');
+		button.classList.add('dark');
+		button.innerHTML = `<span class='btn-bg'>${LIGHT_ICON}</span>`;
 	}
 
 	// Reset and replay animation
