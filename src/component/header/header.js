@@ -8,6 +8,9 @@ import {
 	LIGHT_ICON,
 } from '../../script/constant.js';
 
+import logoForDarkMode from '../../images/logo@dark.png';
+import logoForLightMode from '../../images/logo@light.png';
+
 export function Header() {
 	const menuLinks = [
 		{
@@ -29,7 +32,15 @@ export function Header() {
 
 	const html = `
 		<header class='header'>
-				<a class='brand' href='#'>James Chen</a>
+				<a class='brand' href='#'>
+					<span class='logo-container'>
+						<img class='logo light-mode-logo' src='${logoForLightMode}' alt='Light mode logo'>
+						<img class='logo dark-mode-logo' src='${logoForDarkMode}' alt='Dark mode logo'>
+					</span>
+					<span class='name'>
+						James Chen
+					</span>
+				</a>
 				<button class='theme-toggle' aria-label='Toggle dark mode' aria-pressed='false'>
 					<span class='btn-bg'>
 						${LIGHT_ICON}

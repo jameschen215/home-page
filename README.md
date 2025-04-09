@@ -42,10 +42,10 @@ Photo by <a href="https://unsplash.com/@brucemars?utm_content=creditCopyText&utm
 
 - <span style="text-decoration: line-through">Make nav menu hide when clicking out of it;</span>
 
-- Replace text brand with personal logo;
+- Replace text brand with personal logo; ✓
+
+- Add favicon; ✓
 
 - Replace mock image with real photo;
-
-- Add favicon;
 
 - Accessibility;
