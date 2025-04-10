@@ -1,4 +1,4 @@
-.about {
+.banner {
 	display: flex;
 	flex-direction: column;
 
@@ -8,7 +8,7 @@
 	position: relative;
 }
 
-.about .bg-shadow {
+.banner .bg-shadow {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -29,13 +29,13 @@
 	clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 90%);
 }
 
-.about .banner {
+.banner .photo-container {
 	height: calc(100vh - 56px);
 	width: 100%;
 	/* border: 10px solid purple; */
 }
 
-.banner .photo {
+.photo-container .photo {
 	margin: 48px 30px;
 	width: calc(100% - 30px - 30px);
 	height: calc(100% - 48px - 48px);
@@ -54,7 +54,7 @@
 	object-fit: cover;
 }
 
-.banner .name {
+.photo-container .name {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -70,17 +70,17 @@
 	align-items: start;
 }
 
-.about .name span:last-of-type {
+.banner .name span:last-of-type {
 	margin: -36px 0 -20px;
 	align-self: end;
 }
 
-.description,
+.about,
 .social-links {
 	align-self: center;
 }
 
-.description {
+.about {
 	padding: 0 24px;
 	display: flex;
 	flex-direction: column;
@@ -88,24 +88,24 @@
 	gap: 12px;
 }
 
-.description p {
+.about p {
 	font-size: 2rem;
 }
 
 @media screen and (min-width: 513px) {
-	.banner .photo {
+	.photo-container .photo {
 		margin: 6.5vw 12vw;
 		width: calc(100% - 24vw);
 		height: calc(100% - 13vw);
 	}
 
-	.description {
+	.about {
 		padding: 0 12vw;
 	}
 }
 
 @media screen and (min-width: 673px) {
-	.about {
+	.banner {
 		height: calc(100vh - 56px);
 		/* border-bottom: 5px solid red; */
 	}
@@ -113,16 +113,16 @@
 		clip-path: polygon(0 0, 100% 0, 100% 55%, 0% 85%);
 	}
 
-	.about .social-links {
+	.banner .social-links {
 		display: none;
 	}
 
-	.about .banner {
+	.banner .photo-container {
 		position: relative;
 		/* border: 10px solid #000; */
 	}
 
-	.banner .photo {
+	.photo-container .photo {
 		position: absolute;
 		bottom: 40%;
 		left: 30px;
@@ -133,7 +133,7 @@
 		/* opacity: 0.5; */
 	}
 
-	.banner .name {
+	.photo-container .name {
 		position: absolute;
 		top: 0px;
 		right: -82%;
@@ -146,12 +146,12 @@
 		gap: 12px;
 	}
 
-	.about .name span:last-of-type {
+	.banner .name span:last-of-type {
 		margin: 0;
 		align-self: end;
 	}
 
-	.description {
+	.about {
 		position: absolute;
 		bottom: 20%;
 		left: 10%;
@@ -169,20 +169,20 @@
 		overflow: visible;
 	}
 
-	.description .placeholder {
+	.about .placeholder {
 		width: calc(48% + 30px + 20px);
 		height: calc(62%);
 		float: left;
 		/* background-color: green; */
 	}
 
-	.description h2 {
+	.about h2 {
 		margin-bottom: 12px;
 	}
 }
 
 @media screen and (min-width: 769px) {
-	.description {
+	.about {
 		bottom: 25%;
 		height: 40%;
 		padding: 48px 36px;
@@ -190,17 +190,17 @@
 }
 
 @media screen and (min-width: 821px) {
-	.banner .photo {
+	.photo-container .photo {
 		left: 64px;
 		/* opacity: 0.5; */
 	}
 
-	.banner .name {
+	.photo-container .name {
 		top: 96px;
 		right: -88%;
 	}
 
-	.description {
+	.about {
 		bottom: 25%;
 		left: 15%;
 		height: 40%;
@@ -208,7 +208,7 @@
 		padding: 96px;
 	}
 
-	.description .placeholder {
+	.about .placeholder {
 		width: calc(48% + 64px + 20px);
 		height: calc(70%);
 		/* background-color: green; */
@@ -217,7 +217,7 @@
 
 /* Desktop layout */
 @media screen and (min-width: 1025px) {
-	.about {
+	.banner {
 		flex-direction: row;
 		align-items: center;
 
@@ -229,20 +229,20 @@
 		clip-path: polygon(0 0, 100% 0, 100% 45%, 0% 90%);
 	}
 
-	.about .banner {
+	.banner .photo-container {
 		height: auto;
 		width: 40%;
 		/* border: 10px solid blue; */
 		z-index: 2;
 	}
 
-	.about .banner .photo {
+	.banner .photo-container .photo {
 		position: static;
 		height: 100%;
 		width: 100%;
 	}
 
-	.about .name {
+	.banner .name {
 		top: auto;
 		left: 0;
 		right: auto;
@@ -255,7 +255,7 @@
 		font-size: 6.4rem;
 	}
 
-	.about .description {
+	.banner .about {
 		position: static;
 		z-index: 1;
 
@@ -268,15 +268,15 @@
 		gap: 0px;
 	}
 
-	.about .description h2 {
+	.banner .about h2 {
 		align-self: start;
 	}
 
-	.description .placeholder {
+	.about .placeholder {
 		display: none;
 	}
 
-	.about .social-links {
+	.banner .social-links {
 		margin-top: 12px;
 		align-self: end;
 		display: flex;

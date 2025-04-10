@@ -1,4 +1,4 @@
-import './about.css';
+import './banner.css';
 
 import photoMobile from '../../images/banner-photo@mobile.jpg';
 import photoTablet from '../../images/banner-photo@tablet.jpg';
@@ -6,14 +6,14 @@ import photoDesktop from '../../images/banner-photo@desktop.jpg';
 
 import { SOCIAL_LINKS } from '../../script/constant.js';
 
-export function About() {
+export function Banner() {
 	const html = `
-    <section id='about' class='about'> 
+    <header id='about' class='banner'> 
       <div class='bg-shadow'>
         <div class='bg'></div>
       </div> 
 
-      <div class='banner'>
+      <div class='photo-container'>
         <div class='photo'>
           <picture>
             <source media='(min-width: 481px)' srcset='${photoTablet}'>
@@ -28,7 +28,7 @@ export function About() {
         </div>
       </div>
     
-      <div class='description'>
+      <div class='about'>
         <div class='placeholder'></div>
         <h2>About me</h2>
         <p>
@@ -46,7 +46,7 @@ export function About() {
           
         </div>
       </div>
-    </section>
+    </header>
   `;
 
 	return html;

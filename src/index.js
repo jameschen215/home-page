@@ -2,7 +2,7 @@ import './style/reset.css';
 import './style/main.css';
 
 import { Nav } from './component/nav/nav.js';
-import { About } from './component/about/about.js';
+import { Banner } from './component/banner/banner.js';
 import { Work } from './component/work/work.js';
 import { Contact } from './component/contact/contact.js';
 import {
@@ -12,7 +12,7 @@ import {
 	MENU_ICON,
 } from './script/constant.js';
 
-const main = document.querySelector('#main');
+const container = document.querySelector('#container');
 
 function changeAndAnimateButtonIcon(button) {
 	if (button.classList.contains('show')) {
@@ -158,7 +158,7 @@ function handlePreferDarkSchemeChange() {
 }
 
 (function updateUI() {
-	main.innerHTML = Nav() + About() + Work() + Contact();
+	container.innerHTML = Nav() + Banner() + Work() + Contact();
 
 	// Theme toggle handler
 	setInitialTheme();
@@ -181,7 +181,7 @@ setTimeout(() => {
 }, 500);
 
 function handleScroll() {
-	const sections = document.querySelectorAll('section');
+	const sections = document.querySelectorAll('header,main,footer');
 	const headerHeight = document.querySelector('.nav').offsetHeight;
 
 	// document.querySelector('.nav-links').classList.remove('show');

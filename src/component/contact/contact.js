@@ -8,7 +8,7 @@ import { SOCIAL_LINKS } from '../../script/constant.js';
 
 export function Contact() {
 	const html = `
-    <section id='contact' class='contact'>
+    <footer id='contact' class='contact'>
       <div class='contact-info'>
         <h2>Contact me</h2>
         <p>
@@ -39,7 +39,7 @@ export function Contact() {
           <img src='${photoMobile}' alt='James photo' />
         </picture>
       </div>
-    </section>
+    </footer>
   `;
 	return html;
 }

@@ -185,7 +185,14 @@ button:focus {
 	outline: 2px solid var(--outline-color);
 }
 
-#main {
+a:active,
+a:hover,
+button:active,
+button:hover {
+	outline: none;
+}
+
+.container {
 	width: 100%;
 	max-width: 1152px;
 	background-color: var(--main-bg);

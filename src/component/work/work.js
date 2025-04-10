@@ -5,7 +5,7 @@ import { projectData } from '../../script/data.js';
 
 export function Work() {
 	const html = `
-    <section id='work' class='work'>
+    <main id='work' class='work'>
       <h2>My work</h2>
 
       <div class='project-grid'>
@@ -18,6 +18,7 @@ export function Work() {
                   <div class='screenshot'>
                     <img src='${image}' alt='Project ${title} screenshot'>
                   </div>
+                  
                   <h3 class='project-title'>${title}</h3>
                   <p class='project-desc'>${desc}</p>
 
@@ -35,7 +36,7 @@ export function Work() {
 					})
 					.join('')}
       </div>
-    </section>
+    </main>
   `;
 	return html;
 }
