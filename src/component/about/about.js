@@ -39,7 +39,7 @@ export function About() {
           ${SOCIAL_LINKS.map(
 						({ href, icon }) => `<a href="${href}" target='_blank'>
             <span class='link-bg'>
-              <div class='icon'>${icon}</div>
+              ${icon}
             </span>
           </a>`
 					).join('')}

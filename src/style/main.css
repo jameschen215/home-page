@@ -14,6 +14,9 @@
 	--banner-bg: hsl(0deg 0% 100%);
 	--card-bg: hsl(0deg 0% 100%);
 
+	/* new added */
+	--outline-color: hsl(0deg 0% 80%);
+
 	/* SHADOWS */
 	--shadow-large: hsl(240deg 10% 15% / 0.1);
 	--shadow-small: hsl(240deg 10% 15% / 0.2);
@@ -177,6 +180,11 @@ svg.twitter {
 	height: 82%;
 }
 
+a:focus,
+button:focus {
+	outline: 2px solid var(--outline-color);
+}
+
 #main {
 	width: 100%;
 	max-width: 1152px;
@@ -207,8 +215,7 @@ svg.twitter {
 	padding: 0;
 }
 
-.social-links a:hover svg,
-.social-links a:focus svg {
+.social-links a:hover svg {
 	color: var(--text-color);
 }
 

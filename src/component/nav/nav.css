@@ -1,4 +1,4 @@
-.header {
+.nav {
 	position: fixed;
 	width: 100%;
 	height: 56px;
@@ -47,7 +47,7 @@ body.dark-theme .dark-mode-logo {
 	display: none;
 }
 
-.header button {
+.nav button {
 	width: 22px;
 	height: 22px;
 	border: none;
@@ -56,11 +56,11 @@ body.dark-theme .dark-mode-logo {
 	cursor: pointer;
 }
 
-.header button svg {
+.nav button svg {
 	color: var(--icon-color-dark);
 }
 
-.header button .btn-bg {
+.nav button .btn-bg {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -71,7 +71,7 @@ body.dark-theme .dark-mode-logo {
 	will-change: transform;
 }
 
-.header button:hover .btn-bg {
+.nav button:hover .btn-bg {
 	animation: gelatine 500ms ease;
 }
 
@@ -80,7 +80,7 @@ body.dark-theme .dark-mode-logo {
 }
 
 /* Navbar */
-.nav {
+.nav-links {
 	position: absolute;
 	top: 56px;
 	left: 0;
@@ -91,23 +91,20 @@ body.dark-theme .dark-mode-logo {
 	background: var(--main-bg);
 	box-shadow: 4px 8px 8px var(--shadow-large), 8px 16px 16px var(--shadow-large);
 
+	display: flex;
+	flex-direction: column;
+
 	visibility: hidden;
 	opacity: 0;
 	transform: translateX(100%);
 }
 
-.nav.show {
+.nav-links.show {
 	animation: slideIn 250ms ease-out forwards;
 }
 
-.nav:not(.show) {
+.nav-links:not(.show) {
 	animation: slideOut 250ms ease-in forwards;
-}
-
-.nav-links {
-	display: flex;
-	flex-direction: column;
-	/* gap: 10px; */
 }
 
 .nav-links .icon {
@@ -123,9 +120,13 @@ body.dark-theme .dark-mode-logo {
 }
 
 .nav-links li.active,
-.nav-links li:hover,
-.nav-links li:focus {
+.nav-links li:hover {
 	background-color: var(--nav-link-bg-color);
+}
+
+.nav-links li:focus {
+	outline: hsl(0deg, 0%, 50%);
+	border: none;
 }
 
 .nav-links li a {
@@ -138,20 +139,20 @@ body.dark-theme .dark-mode-logo {
 	font-weight: 400;
 	color: var(--text-color);
 	padding: 12px 20px;
-	border-radius: 4px;
+	/* border-radius: 4px; */
 }
 .nav-links li a span {
 	display: block;
 }
 
 @media screen and (min-width: 513px) {
-	/* Header */
+	/* Nav */
 	.theme-toggle {
 		margin: 0 10px;
 		order: 1;
 	}
 
-	.nav {
+	.nav-links {
 		position: static;
 		width: auto;
 		padding: 0;
@@ -168,8 +169,8 @@ body.dark-theme .dark-mode-logo {
 		display: none;
 	}
 
-	.nav.show,
-	.nav:not(.show) {
+	.nav-links.show,
+	.nav-links:not(.show) {
 		animation: none;
 	}
 
@@ -208,13 +209,11 @@ body.dark-theme .dark-mode-logo {
 	}
 
 	.nav-links li:hover,
-	.nav-links li:focus,
 	.nav-links li.active {
 		background-color: transparent;
 	}
 
 	.nav-links li:hover::before,
-	.nav-links li:focus::before,
 	.nav-links li.active::before {
 		transform: scaleX(1);
 		opacity: 1;

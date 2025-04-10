@@ -1,7 +1,7 @@
 import './style/reset.css';
 import './style/main.css';
 
-import { Header } from './component/header/header.js';
+import { Nav } from './component/nav/nav.js';
 import { About } from './component/about/about.js';
 import { Work } from './component/work/work.js';
 import { Contact } from './component/contact/contact.js';
@@ -43,24 +43,24 @@ function changeAndAnimateButtonIcon(button) {
 function handleMenuToggle() {
 	// Menu toggle handler
 	const menuButton = document.querySelector('.menu-toggle');
-	const navDom = document.querySelector('.nav');
+	const menu = document.querySelector('.nav-links');
 
 	menuButton.addEventListener('click', (ev) => {
 		ev.stopPropagation();
 
-		navDom.classList.toggle('show');
+		menu.classList.toggle('show');
 		changeAndAnimateButtonIcon(menuButton);
 	});
 }
 
 function handleMenuItemClick() {
-	const menuLinks = document.querySelectorAll('.header li');
+	const menuLinks = document.querySelectorAll('.nav-links li');
 	const menuButton = document.querySelector('.menu-toggle');
-	const navDom = document.querySelector('.nav');
+	const menu = document.querySelector('.nav-links');
 
 	menuLinks.forEach((link) => {
 		link.addEventListener('click', (ev) => {
-			navDom.classList.toggle('show');
+			menu.classList.toggle('show');
 
 			changeAndAnimateButtonIcon(menuButton);
 		});
@@ -70,20 +70,17 @@ function handleMenuItemClick() {
 // TODO: make the menu hide when click out of it
 function handleClickOutOfTheMenu() {
 	const menuButton = document.querySelector('.menu-toggle');
-	const navDom = document.querySelector('.nav');
+	const menu = document.querySelector('.nav-links');
 
 	document.addEventListener('click', (ev) => {
 		// Check if the click is outside both the menu and the button that opens it
 		const clickedOutside =
-			!navDom.contains(ev.target) && !menuButton.contains(ev.target);
-
-		console.log(ev.target);
-		console.log(menuButton.contains(ev.target));
+			!menu.contains(ev.target) && !menuButton.contains(ev.target);
 
 		// If the menu is open and the click was outside, close it
-		if (navDom.classList.contains('show') && clickedOutside) {
-			navDom.classList.remove('show');
-			// Add any other code needed to properly close your menu
+		if (menu.classList.contains('show') && clickedOutside) {
+			menu.classList.remove('show');
+			changeAndAnimateButtonIcon(menuButton);
 		}
 	});
 }
@@ -161,7 +158,7 @@ function handlePreferDarkSchemeChange() {
 }
 
 (function updateUI() {
-	main.innerHTML = Header() + About() + Work() + Contact();
+	main.innerHTML = Nav() + About() + Work() + Contact();
 
 	// Theme toggle handler
 	setInitialTheme();
@@ -185,9 +182,9 @@ setTimeout(() => {
 
 function handleScroll() {
 	const sections = document.querySelectorAll('section');
-	const headerHeight = document.querySelector('header').offsetHeight;
+	const headerHeight = document.querySelector('.nav').offsetHeight;
 
-	document.querySelector('.nav').classList.remove('show');
+	// document.querySelector('.nav-links').classList.remove('show');
 
 	sections.forEach((section) => {
 		const sectionTop = section.offsetTop - headerHeight;
