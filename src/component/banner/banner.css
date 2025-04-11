@@ -192,7 +192,6 @@
 @media screen and (min-width: 821px) {
 	.photo-container .photo {
 		left: 64px;
-		/* opacity: 0.5; */
 	}
 
 	.photo-container .name {
@@ -203,6 +202,7 @@
 	.about {
 		bottom: 25%;
 		left: 15%;
+
 		height: 40%;
 		width: 70%;
 		padding: 96px;
@@ -211,7 +211,6 @@
 	.about .placeholder {
 		width: calc(48% + 64px + 20px);
 		height: calc(70%);
-		/* background-color: green; */
 	}
 }
 
@@ -232,7 +231,6 @@
 	.banner .photo-container {
 		height: auto;
 		width: 40%;
-		/* border: 10px solid blue; */
 		z-index: 2;
 	}
 
@@ -249,7 +247,6 @@
 		bottom: 0;
 		padding: 0;
 		margin-bottom: -10px;
-		/* border: 1px solid #000; */
 		justify-content: center;
 
 		font-size: 6.4rem;
