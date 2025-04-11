@@ -56,13 +56,13 @@ export function Nav() {
 				.join('')}
 			</ul>
 
-			<button class='theme-toggle' aria-label='Toggle dark mode' aria-pressed='false'>
+			<button class='toggle theme-toggle' aria-label='Toggle dark mode' aria-pressed='false'>
 				<span class='btn-bg'>
 					${DARK_ICON}
 				</span>
 			</button>
 			
-			<button class='menu-toggle hide' aria-label='Toggle menu open' aria-pressed='false'>
+			<button class='toggle menu-toggle hide' aria-label='Toggle menu open' aria-pressed='false'>
 				<span class='btn-bg'>
 					${MENU_ICON}
 				</span>
