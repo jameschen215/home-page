@@ -31,21 +31,3 @@
 # Acknowledge
 
 Photo by <a href="https://unsplash.com/@brucemars?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">bruce mars</a> on <a href="https://unsplash.com/photos/man-holding-his-chin-facing-laptop-computer-xj8qrWvuOEs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-
-# TODO:
-
-- <span style="text-decoration: line-through">Fine tune nav links to make it active properly;</span>
-
-- <span style="text-decoration: line-through">Fill real personal description and contact information;</span>
-
-- <span style="text-decoration: line-through">Make links `_blank`;</span>
-
-- <span style="text-decoration: line-through">Make nav menu hide when clicking out of it;</span>
-
-- Replace text brand with personal logo; ✓
-
-- Add favicon; ✓
-
-- Replace mock image with real photo;
-
-- Accessibility;
