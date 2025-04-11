@@ -18,7 +18,7 @@ export function Banner() {
           <picture>
             <source media='(min-width: 481px)' srcset='${photoTablet}'>
             <source media='(min-width: 961px)' srcset='${photoDesktop}'>
-            <img src='${photoMobile}' alt='James photo' />
+            <img src='${photoMobile}' alt='James Chen' />
           </picture>
 
           <h1 class='name'>
@@ -37,11 +37,13 @@ export function Banner() {
 
         <div class="social-links">
           ${SOCIAL_LINKS.map(
-						({ href, icon }) => `<a href="${href}" target='_blank'>
-            <span class='link-bg'>
-              ${icon}
-            </span>
-          </a>`
+						({ href, target, icon }) =>
+							`<a href="${href}" target='_blank'>
+                <span class='sr-only'>${target} (Open in new tab)</span>
+                <span class='link-bg' aria-hidden='true'>
+                  ${icon}
+                </span>
+              </a>`
 					).join('')}
           
         </div>

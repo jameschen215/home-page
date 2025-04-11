@@ -24,10 +24,12 @@ export function Work() {
 
                   <div class="project-links">
                     <a class='link' href="${link}" target='_blank'>
-                      <span class='link-bg'>${GITHUB_ICON}</span>
+                      <span class='sr-only'>Project on Github (Open in new tab)</span>
+                      <span class='link-bg' aria-hidden='true'>${GITHUB_ICON}</span>
                     </a>
                     <a class='link' href="${demo}" target='_blank'>
-                      <span class='link-bg'>${SHARE_ICON}</span>
+                      <span class='sr-only'>Project live demo (Open in new tab)</span>
+                      <span class='link-bg' aria-hidden='true'>${SHARE_ICON}</span>
                     </a>
                   </div>
                 </div>

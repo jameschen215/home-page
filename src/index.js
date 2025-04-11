@@ -16,21 +16,17 @@ const container = document.querySelector('#container');
 
 function changeAndAnimateButtonIcon(button) {
 	if (button.classList.contains('show')) {
-		button.classList.remove('show');
-		button.classList.add('hide');
-		button.innerHTML = `<span class='btn-bg'>${MENU_ICON}</span>`;
-	} else if (button.classList.contains('hide')) {
-		button.classList.remove('hide');
-		button.classList.add('show');
+		button.setAttribute('aria-pressed', true);
 		button.innerHTML = `<span class='btn-bg'>${CLOSE_ICON}</span>`;
+	} else if (button.classList.contains('hide')) {
+		button.setAttribute('aria-pressed', false);
+		button.innerHTML = `<span class='btn-bg'>${MENU_ICON}</span>`;
 	} else if (button.classList.contains('light')) {
-		button.classList.remove('dark');
-		button.classList.add('light');
-		button.innerHTML = `<span class='btn-bg'>${DARK_ICON}</span>`;
-	} else if (button.classList.contains('dark')) {
-		button.classList.remove('light');
-		button.classList.add('dark');
+		button.setAttribute('aria-pressed', false);
 		button.innerHTML = `<span class='btn-bg'>${LIGHT_ICON}</span>`;
+	} else if (button.classList.contains('dark')) {
+		button.setAttribute('aria-pressed', true);
+		button.innerHTML = `<span class='btn-bg'>${DARK_ICON}</span>`;
 	}
 
 	// Reset and replay animation
@@ -49,6 +45,15 @@ function handleMenuToggle() {
 		ev.stopPropagation();
 
 		menu.classList.toggle('show');
+
+		if (menuButton.classList.contains('show')) {
+			menuButton.classList.remove('show');
+			menuButton.classList.add('hide');
+		} else if (menuButton.classList.contains('hide')) {
+			menuButton.classList.remove('hide');
+			menuButton.classList.add('show');
+		}
+
 		changeAndAnimateButtonIcon(menuButton);
 	});
 }
@@ -61,6 +66,14 @@ function handleMenuItemClick() {
 	menuLinks.forEach((link) => {
 		link.addEventListener('click', (ev) => {
 			menu.classList.toggle('show');
+
+			if (menuButton.classList.contains('show')) {
+				menuButton.classList.remove('show');
+				menuButton.classList.add('hide');
+			} else if (menuButton.classList.contains('hide')) {
+				menuButton.classList.remove('hide');
+				menuButton.classList.add('show');
+			}
 
 			changeAndAnimateButtonIcon(menuButton);
 		});
@@ -80,6 +93,15 @@ function handleClickOutOfTheMenu() {
 		// If the menu is open and the click was outside, close it
 		if (menu.classList.contains('show') && clickedOutside) {
 			menu.classList.remove('show');
+
+			if (menuButton.classList.contains('show')) {
+				menuButton.classList.remove('show');
+				menuButton.classList.add('hide');
+			} else if (menuButton.classList.contains('hide')) {
+				menuButton.classList.remove('hide');
+				menuButton.classList.add('show');
+			}
+
 			changeAndAnimateButtonIcon(menuButton);
 		}
 	});
@@ -93,26 +115,22 @@ function setInitialTheme() {
 	// Set initial theme
 	if (currentTheme === 'dark') {
 		document.body.classList.add('dark-theme');
-		button.setAttribute('aria-pressed', true);
-		// button.innerHTML = LIGHT_ICON;
-		button.innerHTML = `<span class='btn-bg'>${LIGHT_ICON}</span>`;
+		button.classList.add('dark');
+		button.innerHTML = `<span class='btn-bg'>${DARK_ICON}</span>`;
 	} else if (currentTheme === 'light') {
 		document.body.classList.add('light-theme');
-		button.setAttribute('aria-pressed', false);
-		// button.innerHTML = DARK_ICON;
-		button.innerHTML = `<span class='btn-bg'>${DARK_ICON}</span>`;
+		button.classList.add('light');
+		button.innerHTML = `<span class='btn-bg'>${LIGHT_ICON}</span>`;
 	} else if (prefersDarkScheme.matches) {
 		document.body.classList.add('dark-theme');
 		localStorage.setItem('theme', 'dark');
-		button.setAttribute('aria-pressed', true);
-		// button.innerHTML = LIGHT_ICON;
-		button.innerHTML = `<span class='btn-bg'>${LIGHT_ICON}</span>`;
+		button.classList.add('dark');
+		button.innerHTML = `<span class='btn-bg'>${DARK_ICON}</span>`;
 	} else {
 		document.body.classList.add('light-theme');
 		localStorage.setItem('theme', 'light');
-		button.setAttribute('aria-pressed', false);
-		// button.innerHTML = DARK_ICON;
-		button.innerHTML = `<span class='btn-bg'>${DARK_ICON}</span>`;
+		button.classList.add('light');
+		button.innerHTML = `<span class='btn-bg'>${LIGHT_ICON}</span>`;
 	}
 }
 
@@ -129,14 +147,13 @@ function handleThemeToggle() {
 		if (isDark) {
 			document.body.classList.add('light-theme');
 			localStorage.setItem('theme', 'light');
-			button.setAttribute('aria-pressed', false);
-			button.classList.add('dark');
+			button.classList.add('light');
 		} else {
 			document.body.classList.add('dark-theme');
 			localStorage.setItem('theme', 'dark');
-			button.setAttribute('aria-pressed', true);
-			button.classList.add('light');
+			button.classList.add('dark');
 		}
+
 		changeAndAnimateButtonIcon(button);
 	});
 }
@@ -150,7 +167,6 @@ function handlePreferDarkSchemeChange() {
 		if (!localStorage.getItem('theme')) {
 			document.body.classList.remove('light-theme', 'dark-theme');
 			document.body.classList.add(ev.matches ? 'dark-theme' : 'light-theme');
-			button.setAttribute('aria-pressed', ev.matches);
 			button.classList.add(ev.matches ? 'dark' : 'light');
 			changeAndAnimateButtonIcon(button);
 		}

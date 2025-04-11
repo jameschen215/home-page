@@ -15,7 +15,7 @@
 	--card-bg: hsl(0deg 0% 100%);
 
 	/* new added */
-	--outline-color: hsl(0deg 0% 80%);
+	--outline-color: hsl(0, 0%, 55%);
 
 	/* SHADOWS */
 	--shadow-large: hsl(240deg 10% 15% / 0.1);
@@ -28,7 +28,7 @@ body.dark-theme {
 	--bg: hsl(0deg 0% 10%);
 	--main-bg: hsl(0deg 0% 12.5%);
 	--card-bg: hsl(0deg 0% 15%);
-	--banner-bg: hsl(0deg 0% 15%);
+	--banner-bg: hsl(0, 0%, 15%);
 	--text-color: hsl(0deg 0% 95%);
 
 	--para-color: hsl(0deg 0% 85%);
@@ -86,6 +86,9 @@ body.dark-theme img {
 		--banner-name: hsl(0deg, 0%, 100%);
 		--banner-bg: hsl(0deg 0% 100%);
 		--card-bg: hsl(0deg 0% 100%);
+
+		/* new added */
+		--outline-color: hsl(0, 0%, 55%);
 
 		/* SHADOWS */
 		--shadow-large: hsl(240deg 10% 15% / 0.1);
@@ -187,6 +190,8 @@ button:focus {
 
 a:active,
 a:hover,
+a:visited,
+a:link,
 button:active,
 button:hover {
 	outline: none;
@@ -238,6 +243,17 @@ button:hover {
 
 .social-links a:hover .link-bg {
 	animation: gelatine 500ms ease;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
 }
 
 @media screen and (min-width: 1025px) {

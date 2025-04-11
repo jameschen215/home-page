@@ -23,11 +23,13 @@ export function Contact() {
         </address>
         <div class="social-links">
         ${SOCIAL_LINKS.map(
-					({ href, icon }) => `<a href="${href}" target='_blank'>
-          <span class='link-bg'>
-            ${icon}
-          </span>
-        </a>`
+					({ href, target, icon }) =>
+						`<a href="${href}" target='_blank'>
+              <span class='sr-only'>${target} (Open in new tab)</span>
+              <span class='link-bg' aria-hidden='true'>
+                ${icon}
+              </span>
+            </a>`
 				).join('')}
         </div>
       </div>
@@ -36,7 +38,7 @@ export function Contact() {
         <picture>
         <source media='(min-width: 1025px)' srcset='${photoDesktop}'>
           <source media='(min-width: 513px)' srcset='${photoTablet}'>
-          <img src='${photoMobile}' alt='James photo' />
+          <img src='${photoMobile}' alt='James Chen' />
         </picture>
       </div>
     </footer>

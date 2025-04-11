@@ -48,7 +48,7 @@ export function Nav() {
 					({ name, href, icon }) =>
 						`<li data-name='${name.toLowerCase()}'>
 							<a href=${href}>
-								<span class='icon'>${icon}</span>
+								<span class='icon' aria-hidden='true'>${icon}</span>
 								<span>${name}</span>
 							</a>
 						</li>`
@@ -62,7 +62,7 @@ export function Nav() {
 				</span>
 			</button>
 			
-			<button class='menu-toggle hide'>
+			<button class='menu-toggle hide' aria-label='Toggle menu open' aria-pressed='false'>
 				<span class='btn-bg'>
 					${MENU_ICON}
 				</span>
