@@ -182,19 +182,15 @@ svg.twitter {
 	width: 82%;
 	height: 82%;
 }
-
-a:focus,
-button:focus {
-	outline: 2px solid var(--outline-color);
+a,
+button {
+	outline: none;
 }
 
-a:active,
-a:hover,
-a:visited,
-a:link,
-button:active,
-button:hover {
-	outline: none;
+a:focus-visible,
+button:focus-visible {
+	outline: 2px solid var(--outline-color);
+	outline-offset: 2px;
 }
 
 .container {
